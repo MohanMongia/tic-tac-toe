@@ -1,0 +1,17 @@
+.PlayingGridCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #003366;
+    color: white;
+    height: min(10vw,120px);
+    font-size: max(1rem,min(48px,6vw));
+    transition: font-size 1s ease-in-out, color 1s ease-in-out;
+}
+
+.PlayingGridCell:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

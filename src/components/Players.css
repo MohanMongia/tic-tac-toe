@@ -1,0 +1,16 @@
+.PlayersGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.PlayersGrid > * {
+    /* border: 1px solid red; */
+}
+
+.GameStatus {
+    grid-row-end: span 2;
+    color: green;
+    text-align: center;
+    margin: auto 0px;
+    font-size: max(1rem,min(32px,4vw));
+}

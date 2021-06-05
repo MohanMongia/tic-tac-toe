@@ -1,0 +1,10 @@
+.PlayingGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: min(50vw,50%);
+    gap: 2.5px;
+    margin: 10px auto;
+    border: 1px solid black;
+    padding: 1px;
+}

@@ -1,0 +1,6 @@
+.PlayerName {
+    text-align: center;
+    padding: 30px 0px;
+    border-bottom: 0.5px solid rgb(233, 233, 233);
+    font-size: max(1rem,min(48px,4vw));
+}
