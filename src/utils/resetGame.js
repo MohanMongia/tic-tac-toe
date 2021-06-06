@@ -4,7 +4,7 @@ function checkIfGameAlreadyReset(gameStatus) {
     return false;
 }
 
-export default function whenResetButtonClicked(setGameStatus,setWinner,setTurn,setGridValues,gameStatus) {
+export default function whenResetButtonClicked(setGameStatus,setWinner,setTurn,setGridValues,setMoves,gameStatus) {
     
     if(checkIfGameAlreadyReset(gameStatus))
     {
@@ -13,5 +13,6 @@ export default function whenResetButtonClicked(setGameStatus,setWinner,setTurn,s
     setGameStatus(0);
     setWinner(0);
     setTurn(0);
+    setMoves(0);
     setGridValues([[0,0,0],[0,0,0],[0,0,0]]);
 }

@@ -17,16 +17,14 @@ const GameBox = () => {
     const [scores,setScores] = useState([0,0]);
     const [turn,setTurn] = useState(0);
     const [gridValues,setGridValues] = useState([[0,0,0],[0,0,0],[0,0,0]]);
-    const [moves,setMoves] = useState(0)
+    const [moves,setMoves] = useState(0);
     
     
     useEffect(() => {
-        setMoves(moves+1);
         const result = checkIfGameFinished(gridValues);
         updateStates(result,scores,moves,setWinner,setScores,setGameStatus,setTurn,setMoves);
     },[gridValues]);
 
-    
 
     return (
         <div className="GameBox">
@@ -42,7 +40,7 @@ const GameBox = () => {
                 setMoves={setMoves}
             />
             <div className="ButtonHolder">
-                <Button text="Reset" whenClicked={() => whenResetButtonClicked(setGameStatus,setWinner,setTurn,setGridValues,gameStatus)} />
+                <Button text="Reset" whenClicked={() => whenResetButtonClicked(setGameStatus,setWinner,setTurn,setGridValues,setMoves,gameStatus)} />
             </div>
         </div>
     )

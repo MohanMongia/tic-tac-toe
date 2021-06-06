@@ -6,18 +6,20 @@ import PlayingGridCell from "./PlayingGridCell";
 
 import "./PlayingGrid.css";
 
-const PlayingGrid = ({turn,changeTurn,gridValues,gameStatus,changeGridValues,setGameStatus}) => {
+const PlayingGrid = ({turn,changeTurn,gridValues,gameStatus,moves,changeGridValues,setGameStatus,setMoves}) => {
 
     const stateModifiers = {
         changeTurn : changeTurn,
         changeGridValues : changeGridValues,
-        setGameStatus : setGameStatus
+        setGameStatus : setGameStatus,
+        setMoves : setMoves
     }
 
     const stateValues = {
         turn : turn,
         gridValues : gridValues,
-        gameStatus : gameStatus
+        gameStatus : gameStatus,
+        moves:moves
     }
 
 
@@ -26,7 +28,7 @@ const PlayingGrid = ({turn,changeTurn,gridValues,gameStatus,changeGridValues,set
             return row.map((cellValue,columnIndex) => {
                return  <PlayingGridCell key={`${rowIndex}_${columnIndex}`} value={cellValue} />
             })
-        })
+        });
     }
 
 

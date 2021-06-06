@@ -61,13 +61,15 @@ export default function whenPlayingGridCellisClicked(e,stateModifiers,stateValue
     let {
         gameStatus,
         turn,
-        gridValues
+        gridValues,
+        moves
     } = stateValues;
 
     const {
         changeTurn,
         setGameStatus,
-        changeGridValues
+        changeGridValues,
+        setMoves
     } = stateModifiers;
 
     if(checkIfGameEnded(gameStatus))
@@ -98,8 +100,10 @@ export default function whenPlayingGridCellisClicked(e,stateModifiers,stateValue
     {
         const newGridValues = calculateNewGridValues(gridValues,rowIndex,columnIndex,turn);
 
-        changeGridValues(newGridValues);
-        
+        setMoves(moves+1);
+
         swapTurn(turn,changeTurn);
+
+        changeGridValues(newGridValues);
     }
 }
