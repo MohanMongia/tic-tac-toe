@@ -15,23 +15,21 @@ const GameBox = () => {
     const [gameStatus,setGameStatus] = useState(0);
     const [winner,setWinner] = useState(0);
     const [scores,setScores] = useState([0,0]);
-    const [turn,setTurn] = useState(0);
+    // const [turn,setTurn] = useState(0);
     const [gridValues,setGridValues] = useState([[0,0,0],[0,0,0],[0,0,0]]);
     const [moves,setMoves] = useState(0);
     
     
     useEffect(() => {
         const result = checkIfGameFinished(gridValues);
-        updateStates(result,scores,moves,setWinner,setScores,setGameStatus,setTurn,setMoves);
+        updateStates(result,scores,moves,setWinner,setScores,setGameStatus,setMoves);
     },[gridValues]);
 
 
     return (
         <div className="GameBox">
             <Players gameStatus={gameStatus} winner={winner} scores={scores} />
-            <PlayingGrid 
-                turn={turn}
-                changeTurn={setTurn}
+            <PlayingGrid
                 gridValues={gridValues} 
                 changeGridValues={setGridValues} 
                 gameStatus={gameStatus}
@@ -40,7 +38,7 @@ const GameBox = () => {
                 setMoves={setMoves}
             />
             <div className="ButtonHolder">
-                <Button text="Reset" whenClicked={() => whenResetButtonClicked(setGameStatus,setWinner,setTurn,setGridValues,setMoves,gameStatus)} />
+                <Button text="Reset" whenClicked={() => whenResetButtonClicked(setGameStatus,setWinner,setGridValues,setMoves,gameStatus)} />
             </div>
         </div>
     )
