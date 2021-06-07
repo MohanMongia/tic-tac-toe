@@ -15,7 +15,6 @@ const GameBox = () => {
     const [gameStatus,setGameStatus] = useState(0);
     const [winner,setWinner] = useState(0);
     const [scores,setScores] = useState([0,0]);
-    // const [turn,setTurn] = useState(0);
     const [gridValues,setGridValues] = useState([[0,0,0],[0,0,0],[0,0,0]]);
     const [moves,setMoves] = useState(0);
     
