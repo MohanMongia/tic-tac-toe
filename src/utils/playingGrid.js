@@ -42,31 +42,22 @@ function calculateColumnIndexIn2DArray(indexIn1DArray) {
     return indexIn1DArray%3;
 }
 
-function calculateNewGridValues(gridValues,rowIndex,columnIndex,turn) {
+function calculateNewGridValues(gridValues,rowIndex,columnIndex,moves) {
+    const gridVal = moves%2 === 0 ? 1 : -1 ;
     const newGridValues = [...gridValues];
-    newGridValues[rowIndex][columnIndex] = turn;
+    newGridValues[rowIndex][columnIndex] = gridVal;
     return newGridValues;
 }
-
-function swapTurn(turn,changeTurn) {
-    if(turn === 1)
-        changeTurn(-1);
-    else
-        changeTurn(1);
-}
-
 
 
 export default function whenPlayingGridCellisClicked(e,stateModifiers,stateValues) {
     let {
         gameStatus,
-        turn,
         gridValues,
         moves
     } = stateValues;
 
     const {
-        changeTurn,
         setGameStatus,
         changeGridValues,
         setMoves
@@ -79,8 +70,6 @@ export default function whenPlayingGridCellisClicked(e,stateModifiers,stateValue
 
     if(checkIfGameIsPlayableButNoTurnPlayedYet(gameStatus))
     {
-        changeTurn(1);
-        turn=1;
         setGameStatus(1);
     }
 
@@ -98,11 +87,9 @@ export default function whenPlayingGridCellisClicked(e,stateModifiers,stateValue
     
     if(checkIfGridCellIsClickedPrecisely(e))
     {
-        const newGridValues = calculateNewGridValues(gridValues,rowIndex,columnIndex,turn);
+        const newGridValues = calculateNewGridValues(gridValues,rowIndex,columnIndex,moves);
 
         setMoves(moves+1);
-
-        swapTurn(turn,changeTurn);
 
         changeGridValues(newGridValues);
     }

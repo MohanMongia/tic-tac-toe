@@ -6,17 +6,15 @@ import PlayingGridCell from "./PlayingGridCell";
 
 import "./PlayingGrid.css";
 
-const PlayingGrid = ({turn,changeTurn,gridValues,gameStatus,moves,changeGridValues,setGameStatus,setMoves}) => {
+const PlayingGrid = ({gridValues,gameStatus,moves,changeGridValues,setGameStatus,setMoves}) => {
 
     const stateModifiers = {
-        changeTurn : changeTurn,
         changeGridValues : changeGridValues,
         setGameStatus : setGameStatus,
         setMoves : setMoves
     }
 
     const stateValues = {
-        turn : turn,
         gridValues : gridValues,
         gameStatus : gameStatus,
         moves:moves

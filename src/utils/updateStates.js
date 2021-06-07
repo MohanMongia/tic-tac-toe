@@ -1,4 +1,4 @@
-export default function updateStates(result,scores,moves,setWinner,setScores,setGameStatus,setTurn,setMoves){
+export default function updateStates(result,scores,moves,setWinner,setScores,setGameStatus,setMoves){
     if(result === 1)
     {
         setWinner(1);
@@ -6,7 +6,6 @@ export default function updateStates(result,scores,moves,setWinner,setScores,set
         newScores[0]++;
         setScores(newScores);
         setGameStatus(-1);
-        setTurn(0);
         setMoves(0);
     }
     else if(result === -1)
@@ -16,7 +15,6 @@ export default function updateStates(result,scores,moves,setWinner,setScores,set
         newScores[1]++;
         setScores(newScores);
         setGameStatus(-1);
-        setTurn(0);
         setMoves(0);
     }
     else
@@ -25,7 +23,6 @@ export default function updateStates(result,scores,moves,setWinner,setScores,set
         {
             setWinner(0);
             setGameStatus(-1);
-            setTurn(0);
             setMoves(0);
         }
     }
